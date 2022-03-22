@@ -1,37 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TileSpawnManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField]
-    public GameObject rightTile;
     public GameObject currentTile;
-    public GameObject forwardTile;
-    public GameObject[] tilesPrefab;
-    int count = 10;
-    float time;
+    public GameObject[] tilePrefabs;
+    private static TileSpawnManager instance;
+
+    //public static TileSpawnManager Instance { get => instance;}
+
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //    }
+
+    //}
+
+    public static TileSpawnManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<TileSpawnManager>(); ;
+            }
+            return instance;
+
+        }
+    }
+    // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < count; i++)
+        //Instantiate(rightTile, currentTile.transform.GetChild(1).position, Quaternion.identity);
+        for (int i = 0; i < 10; i++)
         {
-            int k = Random.Range(0, 2);
-            currentTile = Instantiate(tilesPrefab[k],currentTile.transform.GetChild(k).position,Quaternion.identity);
-            
+            SpawnTile();
+
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnTile()
     {
-        time=time+Time.deltaTime;
-        if (time > 3f)
+        int indexNumber = Random.Range(0, 10);
+        if (indexNumber == 3)
         {
-
-
-            Destroy(GameObject.FindGameObjectWithTag("Tile"));
+            currentTile.transform.GetChild(3).gameObject.SetActive(true);
         }
-
+        int randomValue = Random.Range(0, 2);
+        currentTile = Instantiate(tilePrefabs[randomValue], currentTile.transform.GetChild(randomValue).position, Quaternion.identity);
     }
 }

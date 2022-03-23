@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   playerSpeed: 2
+  temp: {fileID: 0}
 --- !u!54 &25245886
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -386,7 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTile: {fileID: 389038660}
-  tilePrefabs:
+  tilesPrefab:
   - {fileID: 4218486074038667840, guid: c8ee68ea483ebb5429af18a209862ac3, type: 3}
   - {fileID: 5266697951606102770, guid: 1babeb179bb8af04d81be472d8ffe90c, type: 3}
 --- !u!4 &391112869
@@ -432,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30b8a04cb09d3d488dabb1c40d826ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   scoreText: {fileID: 1086897849}
 --- !u!4 &496944595
 Transform:

@@ -5,13 +5,23 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    int score;
-     public Text scoreText;
+    public int score;
+    public Text scoreText;
 
-    public void ScoreCalculator(int scoreValue)
+    private void Start()
+    {
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    TileSpawnManager.Instance.SpawnTile();
+
+        //}
+    }
+    public void ScoreUpdate(int scoreValue)
     {
         score = score + scoreValue;
-        scoreText.text = score.ToString();       
-        Debug.Log("Score :" +score);
+        Debug.Log("Score: " + score);
+        scoreText.text = score.ToString();
     }
+
+
 }

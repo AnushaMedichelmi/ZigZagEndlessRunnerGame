@@ -11,36 +11,35 @@ public class TileScript : MonoBehaviour
         rb= GetComponentInParent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-   
-    IEnumerator FallDown()
-    {
-        yield return(new WaitForSeconds(0.5f));
-        Debug.Log("Falling down");
-        rb.isKinematic = true;
-        yield return (new WaitForSeconds(1f));
-        Debug.Log("Stop falling");
-       // gameObject.SetActive(true);
-
-}
-
     private void OnTriggerExit(Collider other)
     {
+        TileSpawnManager.Instance.SpawnTile();
         if (other.tag == "Player")
         {
             StartCoroutine("FallDown");
         }
-       if(name=="RightTile")
-        
+        if (name == "RightTile")
+        {
             TileSpawnManager.Instance.BackToRightPool(other.gameObject);
-        else if(name=="ForwardTile")
+        }
+        else if (name == "ForwardTile")
+        {
             TileSpawnManager.Instance.BackToForwardPool(other.gameObject);
+        }
 
-       
+
     }
+
+    IEnumerator FallDown()
+    {
+        yield return(new WaitForSeconds(0.5f));
+        Debug.Log("Falling down");
+        rb.isKinematic = false;
+        yield return (new WaitForSeconds(1f));
+        Debug.Log("Stop falling");
+        rb.isKinematic = true;
+}
+
+  
    
 }

@@ -101,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator RightPool()
     {
         yield return new WaitForSeconds(1f);
+    
 
         TileSpawnManager.Instance.BackToRightPool(temp);
         // TileSpawnManager.Instance.BackToForwardPool(temp);
@@ -115,9 +116,5 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-
-
-
-
 
 }

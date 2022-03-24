@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5266697951606102768}
   - component: {fileID: 5266697951606102771}
   - component: {fileID: -8233947609594918910}
+  - component: {fileID: 716522838282393745}
   m_Layer: 0
   m_Name: RightTile
   m_TagString: Right
@@ -114,8 +115,20 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &716522838282393745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266697951606102770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c154c89633fc3048a84c9f7a0ad8958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5266697951796558890
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4400982933939577098}
   - component: {fileID: 7162958748248130860}
+  - component: {fileID: 649701361510209879}
   m_Layer: 0
   m_Name: ColliderChecking
   m_TagString: Right
@@ -218,8 +232,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.09408665, y: 0.29012126, z: 1}
-  m_Center: {x: 0.45295668, y: 0.64465356, z: 0}
+  m_Size: {x: 0.9364462, y: 0.29012132, z: 0.9920263}
+  m_Center: {x: -0.01696682, y: 0.64465356, z: -0.0039868355}
+--- !u!114 &649701361510209879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314362990103036633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c154c89633fc3048a84c9f7a0ad8958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8181237428821349118
 GameObject:
   m_ObjectHideFlags: 0

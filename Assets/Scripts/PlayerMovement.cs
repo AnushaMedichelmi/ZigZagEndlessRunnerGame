@@ -38,6 +38,14 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Coin")
+        {
+            score.ScoreUpdate(10);
+        }
+    }
+
 
 
     public void OnCollisionEnter(Collision other)
@@ -56,10 +64,9 @@ public class PlayerMovement : MonoBehaviour
         //    TileSpawnManager.Instance.SpawnTile();
 
         //}
-        if (other.gameObject.tag == "Coin")
-        {
-            score.ScoreUpdate(10);
-        }
+
+
+        
         /*
         if (other.gameObject.tag == "Right")
         {

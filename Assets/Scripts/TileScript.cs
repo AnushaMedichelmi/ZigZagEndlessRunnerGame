@@ -8,7 +8,7 @@ public class TileScript : MonoBehaviour
     Rigidbody rb;
     void Start()
     {
-        rb= GetComponentInParent<Rigidbody>();
+        rb = GetComponentInParent<Rigidbody>();
     }
 
     private void OnTriggerExit(Collider other)
@@ -18,28 +18,32 @@ public class TileScript : MonoBehaviour
         {
             StartCoroutine("FallDown");
         }
-        if (name == "RightTile")
-        {
-            TileSpawnManager.Instance.BackToRightPool(other.gameObject);
-        }
-        else if (name == "ForwardTile")
-        {
-            TileSpawnManager.Instance.BackToForwardPool(other.gameObject);
-        }
+
 
 
     }
 
     IEnumerator FallDown()
     {
-        yield return(new WaitForSeconds(0.5f));
+        yield return (new WaitForSeconds(0.5f));
         Debug.Log("Falling down");
         rb.isKinematic = false;
         yield return (new WaitForSeconds(1f));
         Debug.Log("Stop falling");
         rb.isKinematic = true;
+        if (TileSpawnManager.Instance.name == "RightTile")
+        {
+            TileSpawnManager.Instance.BackToRightPool(gameObject);
+        }
+        if (TileSpawnManager.Instance.name == "ForwardTile")
+        {
+
+            TileSpawnManager.Instance.BackToForwardPool(gameObject);
+
+        }
+    }
 }
 
   
    
-}
+
